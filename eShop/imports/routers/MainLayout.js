@@ -5,6 +5,7 @@ import {
 }from 'react-router-dom'
 import Landing from './pages/Landing'
 import Signup from './pages/Signup'
+import Signin from './pages/Signin'
 import NotFound from './pages/NotFound'
 
 function MainLayout(props){
@@ -12,7 +13,8 @@ function MainLayout(props){
         <Switch>
             <Route path="/signup" component={Signup}/>
             <Route path="/" exact component={Landing}/>
-            <Route path="*" exact component={NotFound}/>
+            <Route path="/" exact component={Landing}/>
+            <Route path="/login" exact component={Signin}/>
         </Switch>
     )
 }

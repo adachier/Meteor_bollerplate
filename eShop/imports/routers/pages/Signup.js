@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {Form, Button, Container} from 'semantic-ui-react'
+import {Link} from 'react-router-dom'
 import {Accounts} from 'meteor/accounts-base'
 
 function Signup(props){
@@ -25,6 +26,9 @@ function Signup(props){
                 <Form.Input value ={email} onChange={(e, {value}) => setEmail(value)} label="Your e-mail" required type="email" placeholder="example@mail.com" />
                 <Form.Input value ={password} onChange={(e, {value}) => setPassword(value)} label="Your password" required type="password" placeholder="password" />
                 <Button disabled={!email || !password} color="orange">Sign Up</Button>
+                <Link to="/login">
+                    <Button size="mini">I already got an account</Button>
+                </Link>
             </Form>
         </Container>
     )
