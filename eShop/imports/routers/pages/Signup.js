@@ -7,7 +7,16 @@ function Signup(props){
     const [password, setPassword]               =useState()
 
     const signup = () => {
-        Accounts.createUser(email, password)
+        Accounts.createUser({
+            email,
+            password,
+        },(err)=>{
+            if(err){
+                alert(err.message)
+            }else{
+                console.log('User created')
+            }
+        })
     }
     return(
         <Container>
