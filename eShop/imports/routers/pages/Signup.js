@@ -19,6 +19,7 @@ function Signup(props){
             }
         })
     }
+
     return(
         <Container>
             <h1>Sign Up for FREE !</h1>
@@ -27,7 +28,7 @@ function Signup(props){
                 <Form.Input value ={password} onChange={(e, {value}) => setPassword(value)} label="Your password" required type="password" placeholder="password" />
                 <Button disabled={!email || !password} color="orange">Sign Up</Button>
                 <Link to="/login">
-                    <Button size="mini">I already got an account</Button>
+                    <Button size="mini">Already got an account ?</Button>
                 </Link>
             </Form>
         </Container>
