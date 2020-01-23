@@ -7,12 +7,12 @@ function Signup(props){
     const [password, setPassword]               =useState()
 
     const signup = () => {
-
+        Accounts.createUser(email, password)
     }
     return(
         <Container>
             <h1>Sign Up for FREE !</h1>
-            <Form>
+            <Form onSubmit={signup}>
                 <Form.Input value ={email} onChange={(e, {value}) => setEmail(value)} label="Your e-mail" required type="email" placeholder="example@mail.com" />
                 <Form.Input value ={password} onChange={(e, {value}) => setPassword(value)} label="Your password" required type="password" placeholder="password" />
                 <Button disabled={!email || !password} color="orange">Sign Up</Button>
