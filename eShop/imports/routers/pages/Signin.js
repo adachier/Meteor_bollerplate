@@ -30,7 +30,7 @@ function Signin(props){
             </Form>
             :
             <div>
-                <p>You're already connected</p>
+                <p>You're already connected with address {props.current_user.emails[0].address}</p>
                     <Button onClick={logout} color="red">Log Out</Button>
             </div>
             }

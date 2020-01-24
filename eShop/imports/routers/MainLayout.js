@@ -7,14 +7,16 @@ import Landing from './pages/Landing'
 import Signup from './pages/Signup'
 import Signin from './pages/Signin'
 import NotFound from './pages/NotFound'
+import AdminUsers from './pages/admin/AdminUsers'
 
 function MainLayout(props){
     return(
         <Switch>
             <Route path="/signup" component={Signup}/>
-            <Route path="/" exact component={Landing}/>
-            <Route path="/" exact component={Landing}/>
+            <Route path="/admin/users" exact component={AdminUsers}/>
             <Route path="/login" exact component={Signin}/>
+            <Route path="*" exact component={NotFound}/>
+            <Route path="/" exact component={Landing}/>
         </Switch>
     )
 }
