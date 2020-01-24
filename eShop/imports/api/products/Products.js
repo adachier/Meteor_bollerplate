@@ -1,6 +1,6 @@
 import SimpleSchema from 'simpl-schema'
 
-const products = new Mongo.Collection('products')
+const Products = new Mongo.Collection('products')
 const ProductsSchema = new SimpleSchema({
     name: {
         type: String,
@@ -28,7 +28,8 @@ const ProductsSchema = new SimpleSchema({
         defaultValue: "https://guitar.com/wp-content/uploads/2019/10/lava-music-lava-me-pro@1400x1050.jpg"
     },
     category: {
-        type: String
+        type: String,
+        optional: true
     },
     created_at: {
         type: Date,
@@ -37,3 +38,4 @@ const ProductsSchema = new SimpleSchema({
 })
 
 Products.attachSchema(ProductsSchema)
+export default Products

@@ -3,10 +3,21 @@ import { Container, Form, Button } from 'semantic-ui-react'
 
 function NewProduct(props){
     const [product, setProduct] = useState({})
+
+    const create_product = () => {
+        Meteor.call('products.create', product, (err, data)=>{
+            if(err){
+                alert(err.message)
+            }else{
+                alert('Your product has been created')
+                console.log(data)
+            }
+        })
+    }
     return(
         <Container>
             <h1>Create a new product</h1>
-            <Form>
+            <Form onSubmit={create_product}>
                 <Form.Input
                     type="text"
                     label="Product's Name"
