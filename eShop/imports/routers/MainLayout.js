@@ -16,18 +16,20 @@ import Catalog from './pages/Catalog'
 import AdminUsers from './pages/admin/AdminUsers'
 import MyProducts from './pages/MyProducts'
 import NewProduct from './pages/NewProduct'
+import EditProduct from './pages/admin/EditProduct'
 
 function MainLayout(props){
     return(
         <Switch>
-            <Route path="/signup" exact component={Signup}/>
-            <Route path="/admin/users" exact component={AdminUsers}/>
-            <Route path="/login" exact component={Signin}/>
-            <Route path="/my_products" exact component={MyProducts}/>
-            <Route path="/catalog/:user_id" exact component={Catalog}/>
-            <Route path="/new_product" exact component={NewProduct}/>
-            <Route path="*" exact component={NotFound}/>
-            <Route path="/" exact component={Landing}/>
+            <Route path="/signup"                   exact component={Signup}/>
+            <Route path="/admin/users"              exact component={AdminUsers}/>
+            <Route path="/edit/:product_id"         exact component={EditProduct}/>
+            <Route path="/login"                    exact component={Signin}/>
+            <Route path="/my_products"              exact component={MyProducts}/>
+            <Route path="/catalog/:user_id"         exact component={Catalog}/>
+            <Route path="/new_product"              exact component={NewProduct}/>
+            <Route path="/"                         exact component={Landing}/>
+            <Route path="*"                         exact component={NotFound}/>
         </Switch>
     )
 }

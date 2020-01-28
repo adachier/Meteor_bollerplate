@@ -10,10 +10,10 @@ function MyProducts(props){
         <Container>
             <h1>My Products</h1>
             <Link to ="/new_product">
-                <Button color ="orange" icon="plus" content="Ajouter un produit" />
+                <Button color ="orange" icon="plus" content="Add a new product" />
             </Link>
             {!props.loading && props.products.map(product =>{
-                return <Product product={product}/>
+                return <Product key={product._id} product={product}/>
             })}
         </Container>
     )
