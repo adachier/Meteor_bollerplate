@@ -4,4 +4,5 @@ import '/imports/api/products/server/publications'
 
 Meteor.startup(()=>{
     console.log ('Server : meteor est lancé')
+    Migrations.migrateTo('latest');
 })

@@ -3,9 +3,12 @@ import {Menu} from 'semantic-ui-react'
 import {Link} from 'react-router-dom'
 import {withTracker} from 'meteor/react-meteor-data'
 
-function Navbar(props){
+function Navbar({user}){
     return(
         <Menu>
+            {user && user.profile.cart && user.profile.cart.length > 0 &&
+                <Menu.Item>{user.profile.cart.length} product(s)</Menu.Item>
+            }
             <Link to ="/admin/users"> 
                 <Menu.Item>Users</Menu.Item>
             </Link>

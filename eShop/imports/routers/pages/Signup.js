@@ -11,6 +11,9 @@ function Signup(props){
         Accounts.createUser({
             email,
             password,
+            profile:{
+                cart: []
+            }
         },(err)=>{
             if(err){
                 alert(err.message)
