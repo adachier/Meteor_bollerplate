@@ -8,7 +8,7 @@ import Product from  '/imports/components/Product'
 function Catalog(props){
     return(
         <Container>
-            <h1>{props.username}'s Catalog</h1>
+            <h1>{props.match.params.user_id}'s Catalog</h1>
             {!props.loading && props.products.map(product =>{
                 return <Product product={product}/>
             })}
