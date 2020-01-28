@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { Container, Form, Button } from 'semantic-ui-react'
+import { Container, Form, Button, Loader } from 'semantic-ui-react'
 import ProductForm from '/imports/components/ProductForm'
 
 function EditProduct(props){
-    const [product, setProduct] = useState({})
+    const [product, setProduct] = useState()
 
     useEffect(()=>{
         Meteor.call('products.by_id', props.match.params.product_id, (err, data)=>{
@@ -18,7 +18,11 @@ function EditProduct(props){
     return(
         <Container>
             <h1>Edit a product</h1>
+            {!product ?
+            <Loader active inline/>
+            :
             <ProductForm product={product}/>
+            }
         </Container>
     )
 }
